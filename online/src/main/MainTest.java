@@ -7,7 +7,6 @@ import src.exceptions.InvalidDepthException;
 import src.exceptions.InvalidSizeException;
 
 
-
 public class MainTest {
     public static void main(String[] args) {
         Data data = new Data();
@@ -35,7 +34,11 @@ public class MainTest {
                 distance = new SingleLinkDistance();
                 break;
             case 2:
+
                 distance = new AverageLinkDistance();
+
+                distance = new AverageLinkdistance();
+
                 break;
             default:
                 System.out.println("Scelta non valida. Verrà usata la Single Link Distance.");

@@ -1,3 +1,5 @@
+package src.clustering;
+import src.data.Data;
 public class Cluster {
     private Integer[] clusteredData = new Integer[0];
 

@@ -1,7 +1,15 @@
+package src.clustering;
+
+import src.data.Data;
+import src.exceptions.InvalidDepthException;
+
 public class Dendrogram {
     private ClusterSet[] tree;
 
-    public Dendrogram(int depth) {
+    public Dendrogram(int depth) throws InvalidDepthException {
+        if (depth <= 0) {
+            throw new InvalidDepthException("La profondità deve essere un numero positivo.");
+        }
         tree = new ClusterSet[depth];
     }
 

@@ -1,3 +1,7 @@
+package src.data;
+
+import src.exceptions.InvalidSizeException;
+
 public class Data {
     private Example[] data;
     private int numberOfExamples;
@@ -46,7 +50,7 @@ public class Data {
         return data[exampleIndex];
     }
 
-    public double[][] distance() {
+    public double[][] distance() throws InvalidSizeException {
         int n = getNumberOfExamples();
         double[][] distances = new double[n][n];
         for (int i = 0; i < n; i++) {

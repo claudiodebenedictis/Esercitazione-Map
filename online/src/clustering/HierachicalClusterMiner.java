@@ -1,12 +1,18 @@
+package src.clustering;
+
+import src.data.Data;
+import src.exceptions.InvalidDepthException;
+import src.exceptions.InvalidSizeException;
+
 // File: HierarchicalClusterMiner.java
 public class HierachicalClusterMiner {
     private Dendrogram dendrogram;
 
-    public HierachicalClusterMiner(int depth) {
+    public HierachicalClusterMiner(int depth) throws InvalidDepthException {
         dendrogram = new Dendrogram(depth);
     }
 
-    public void mine(Data data, ClusterDistance distance) {
+    public void mine(Data data, ClusterDistance distance) throws InvalidSizeException {
         int depth = dendrogram.getDepth();
         if (depth < 1) return;
 

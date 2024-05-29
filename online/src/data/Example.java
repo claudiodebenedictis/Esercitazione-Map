@@ -1,3 +1,7 @@
+package src.data;
+
+import src.exceptions.InvalidSizeException;
+
 public class Example {
     private Double[] example;
 
@@ -13,7 +17,11 @@ public class Example {
         return example[index];
     }
 
-    public double distance(Example newE) {
+    public double distance(Example newE) throws InvalidSizeException {
+        if (this.example.length != newE.example.length) {
+            throw new InvalidSizeException("Gli esempi devono avere la stessa dimensione per calcolare la distanza.");
+        }
+
         double sum = 0;
         for (int i = 0; i < this.example.length; i++) {
             sum += Math.pow(this.example[i] - newE.get(i), 2);

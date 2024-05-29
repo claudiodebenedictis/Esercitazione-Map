@@ -1,3 +1,8 @@
+package src.clustering;
+import src.data.Data;
+import src.exceptions.InvalidSizeException;
+
+
 public class ClusterSet {
     private Cluster[] C;
     private int lastClusterIndex = 0;
@@ -23,8 +28,9 @@ public class ClusterSet {
      * @param distance
      * @param data
      * @return
+     * @throws InvalidSizeException 
      */
-    public ClusterSet mergeClosestClusters(ClusterDistance distance, Data data) {
+    public ClusterSet mergeClosestClusters(ClusterDistance distance, Data data) throws InvalidSizeException {
         double minDistance = Double.MAX_VALUE;
         int minI = -1, minJ = -1;
         for (int i = 0; i < lastClusterIndex; i++) {

@@ -1,6 +1,14 @@
+package src.distance;
+
+import src.clustering.Cluster;
+import src.data.Data;
+import src.data.Example;
+import src.exceptions.InvalidSizeException;
+import src.clustering.ClusterDistance;
+
 public class AverageLinkdistance implements ClusterDistance {
     @Override
-    public double distance(Cluster c1, Cluster c2, Data data) {
+    public double distance(Cluster c1, Cluster c2, Data data) throws InvalidSizeException {
         double totalDistance = 0;
         int count = 0;
 
